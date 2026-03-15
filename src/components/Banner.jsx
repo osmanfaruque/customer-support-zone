@@ -1,28 +1,47 @@
 function Banner({ inProgressCount, resolvedCount }) {
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-emerald-100 bg-gradient-to-r from-emerald-700 via-teal-700 to-cyan-700 p-6 text-white shadow-lg sm:p-8">
-      <div className="relative z-10 grid gap-8 md:grid-cols-2">
-        <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/80">Support Overview</p>
-          <h2 className="mt-3 text-3xl font-black leading-tight sm:text-4xl">Handle Every Ticket With Clarity</h2>
-          <p className="mt-3 max-w-xl text-sm text-white/85 sm:text-base">
-            Track active issues, complete tasks, and keep your customer support queue under control in one place.
+    <section className="pt-4 grid gap-4 sm:grid-cols-2 md:gap-5">
+      <article className="relative rounded-xl bg-gradient-to-r from-[#5a30d9] to-[#8b59f3] p-6 text-white">
+        <img
+          src="/vectors/vector1.png"
+          alt=""
+          className=" absolute -left-1 -top-1"
+        />
+        <img
+          src="/vectors/vector1.png"
+          alt=""
+          className=" absolute -right-8 -bottom-8 rotate-180"
+        />
+
+        <div className="relative z-10 flex flex-col items-center justify-center text-center">
+          <p className="text-4xl font-semibold">
+            In-Progress
+          </p>
+          <p className="pt-3 text-5xl font-black">
+            {inProgressCount}
           </p>
         </div>
+      </article>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <article className="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
-            <p className="text-xs uppercase tracking-[0.2em] text-white/80">In Progress</p>
-            <p className="mt-3 text-4xl font-black">{inProgressCount}</p>
-          </article>
-          <article className="rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm">
-            <p className="text-xs uppercase tracking-[0.2em] text-white/80">Resolved</p>
-            <p className="mt-3 text-4xl font-black">{resolvedCount}</p>
-          </article>
+      <article className="relative rounded-xl bg-gradient-to-r from-[#53d36d] to-[#007f8d] p-6 text-white">
+        <img
+          src="/vectors/vector1.png"
+          alt=""
+          className="absolute -left-6 -top-10"
+        />
+        <img
+          src="/vectors/vector1.png"
+          alt=""
+          className=" absolute -right-8 -bottom-8 rotate-180"
+        />
+
+        <div className="relative z-10 flex flex-col items-center justify-center text-center">
+          <p className="text-4xl font-semibold">Resolved</p>
+          <p className="pt-3 text-5xl font-black ">{resolvedCount}</p>
         </div>
-      </div>
+      </article>
     </section>
-  )
+  );
 }
 
-export default Banner
+export default Banner;
