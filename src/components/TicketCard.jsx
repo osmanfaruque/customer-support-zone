@@ -9,6 +9,16 @@ const statusClasses = {
   'In-Progress': 'bg-[#f0df9b] text-[#976d00]',
 }
 
+const statusDotClasses = {
+  Open: 'bg-[#08a54f]',
+  'In-Progress': 'bg-[#f4b000]',
+}
+
+const statusLabel = {
+  Open: 'Open',
+  'In-Progress': 'In- Progress',
+}
+
 function formatDate(dateValue) {
   const date = new Date(dateValue)
 
@@ -37,31 +47,31 @@ function TicketCard({ ticket, isInProgress, onAddToProgress }) {
           onAddToProgress(ticket)
         }
       }}
-      className="group cursor-pointer rounded-md border border-slate-200 bg-white px-4 py-3 shadow-[0_1px_2px_rgba(16,24,40,0.05)] transition hover:-translate-y-[1px] hover:border-slate-300"
+      className="group cursor-pointer rounded-[6px] border border-[#d9dce3] bg-[#f8fafc] px-5 py-4 shadow-[0_1px_1px_rgba(16,24,40,0.04)] transition hover:border-[#cfd5df]"
     >
       <div className="flex items-center justify-between gap-3">
-        <h3 className="text-[19px] font-bold leading-tight text-[#1d3557]">
+        <h3 className="text-[15px] font-bold leading-[1.2] tracking-[-0.01em] text-[#122a44] sm:text-[17px]">
           {ticket.title}
         </h3>
         <span
-          className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-medium ${statusClasses[visualStatus]}`}
+          className={`inline-flex shrink-0 items-center gap-2 rounded-full px-4 py-1.5 text-[14px] font-medium leading-none ${statusClasses[visualStatus]}`}
         >
-          <span className="h-2.5 w-2.5 rounded-full bg-[#08a54f]" />
-          {visualStatus}
+          <span className={`h-2.5 w-2.5 rounded-full ${statusDotClasses[visualStatus]}`} />
+          {statusLabel[visualStatus]}
         </span>
       </div>
 
-      <p className="mt-2 line-clamp-2 text-[17px] leading-snug text-slate-500">{ticket.description}</p>
+      <p className="mt-3 line-clamp-2 text-[14px] leading-[1.25] text-[#6a7687] sm:text-[15px]">{ticket.description}</p>
 
-      <div className="mt-4 flex items-center justify-between gap-2 text-[14px]">
+      <div className="mt-5 flex items-center justify-between gap-2 text-[13px] sm:text-[14px]">
         <div className="flex items-center gap-4">
-          <span className="font-semibold text-slate-500">#{ticket.id}</span>
+          <span className="font-semibold text-[#677588]">#{ticket.id}</span>
           <span className={`font-bold uppercase tracking-wide ${priorityClasses[ticket.priority]}`}>
             {ticket.priority} PRIORITY
           </span>
         </div>
 
-        <div className="flex items-center gap-4 text-slate-500">
+        <div className="flex items-center gap-4 text-[#677588]">
           <span>{ticket.customer}</span>
           <span className="flex items-center gap-1">
             <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
