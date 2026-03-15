@@ -1,25 +1,31 @@
 function Navbar() {
+  const navItems = ['Home', 'FAQ', 'Changelog', 'Blog', 'Download', 'Contact']
   return (
-    <header className="relative z-10 border-b border-slate-200/70 bg-white/90 backdrop-blur">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-xl bg-emerald-700 text-sm font-bold text-white">
-            CS
-          </div>
-          <div>
-            <h1 className="text-lg font-black tracking-tight text-slate-900 sm:text-xl">Customer Support Zone</h1>
-            <p className="text-xs text-slate-500">Ticket Command Center</p>
-          </div>
+    <header className="relative z-20 border-b border-slate-300 bg-[#f4f5f7]">
+      <nav className="mx-auto flex h-[78px] w-full max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-12">
+        <div className="shrink-0">
+          <h1 className="text-[28px] font-black tracking-tight text-[#15153a] sm:text-[30px]">
+            CS - Ticket System
+          </h1>
         </div>
 
-        <ul className="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
-          <li><a href="#tickets" className="transition hover:text-emerald-700">Tickets</a></li>
-          <li><a href="#status" className="transition hover:text-emerald-700">Task Status</a></li>
-          <li><a href="#footer" className="transition hover:text-emerald-700">Help</a></li>
-        </ul>
+        <div className="mx-6 hidden flex-1 items-center md:flex lg:mx-10">
+          <ul className="mx-5 flex items-center gap-6 whitespace-nowrap text-[13px] font-medium text-slate-700 lg:gap-7">
+            {navItems.map((item) => (
+              <li key={item}>
+                <a
+                  href="#"
+                  className="transition-colors duration-150 hover:text-[#6f43eb]"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <button className="rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800">
-          New Ticket
+        <button className="rounded-md border border-[#6d40e8] bg-[#7b49f0] px-4 py-2 text-sm font-semibold text-white shadow-[0_2px_0_rgba(0,0,0,0.18)] transition hover:bg-[#6d40e8]">
+          + New Ticket
         </button>
       </nav>
     </header>
