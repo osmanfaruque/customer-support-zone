@@ -25,23 +25,12 @@ state is technique used to manupulate data in a component which can be changed b
 
 ### 3) What is the useState hook, and how does it work?
 
-UseState
+The useState hook is a function that allows you to add state to functional components. It returns an array with two elements - the current state value and a function to update it.
 
 ### 4) How can you share state between components in React?
 
-The common approach is lifting state up to the nearest common parent and passing data/functions down via props. For larger applications, Context API or state libraries can be used to avoid excessive prop drilling.
+The common rule is lifting state up to the nearest parent and passing data down via props.
 
 ### 5) How is event handling done in React?
 
-Event handling in React is done with camelCase event props such as onClick, onChange, and onSubmit. You pass a function reference or inline handler to these props. React handles these through its synthetic event system.
-
-Example:
-
-```jsx
-<button onClick={handleClick}>Complete</button>
-```
-
-## Submission
-
-- Live Link: TO_BE_ADDED
-- GitHub Repository: https://github.com/osmanfaruque/customer-support-zone
+Event handling in React is done with action handlers such as onClick, onChange, and onSubmit. DOM elements pass a function to these handlers, and React handles these through the handler functions.
